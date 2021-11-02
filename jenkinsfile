@@ -39,6 +39,20 @@ pipeline {
             }
         }
     
+        stage('Notify') {
+            steps {
+                script {
+                    ihttp_obj.request(
+                    uri=https://chat.googleapis.com/v1/spaces/AAAA2NbUb4k/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=Dj2G09mcUzr7_EHuGs2OY0b_tyllq1tH4SGezzJvB8g%3D,
+                    method='POST',
+                    headers=message_headers,
+                    body=dumps(bot_message),
+                    )
+                }
+            }
+        }
+
+
     }
 }
 
