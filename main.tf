@@ -133,32 +133,6 @@ resource "azurerm_virtual_machine" "test" {
  
  
  
-  # storage_os_disk {
-  #   name              = "myosdisk${count.index +1}"
-  #   caching           = "ReadWrite"
-  #   create_option     = "FromImage"
-  #   managed_disk_type = "Standard_LRS"
-  # }
-  
-  # storage_image_reference {
-  #   publisher = "Canonical"
-  #   offer     = "UbuntuServer"
-  #   sku       = "16.04-LTS"
-  #   version   = "latest"
-  # }  
-  # os_profile {
-  #   computer_name  = "hostname"
-  #   admin_username = "shahars"
-  # }
-  
-  # os_profile_linux_config {
-  #   disable_password_authentication = true
-  #   # ssh_keys {
-    #   key_data = file("~/.ssh/id_rsa.pub")
-    #   path = "/home/shahars/.ssh/authorized_keys"
-    # }
-  
-  #}
 
    
   
