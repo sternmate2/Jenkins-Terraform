@@ -371,7 +371,5 @@ output "netwrk_id" {
   value = azurerm_network_interface.test[0].id
 }
 
-output "KeyVault_id" {
-  value = data.azurerm_key_vault.kv.value
-}
+
 
