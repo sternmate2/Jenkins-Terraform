@@ -97,7 +97,7 @@ resource "azurerm_virtual_machine" "test" {
   os_profile_linux_config {
     disable_password_authentication = true
     ssh_keys {
-      key_data = data.azurerm_key_vault_secret.main.value
+      key_data = data.azurerm_key_vault_secret.secret.value
        path     = "/home/shahars/.ssh/authorized_keys"
     }   
   }   
