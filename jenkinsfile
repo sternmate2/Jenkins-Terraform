@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
-        string(name: 'environment', defaultValue: 'prod', description: 'Environemnt')
+        string(name: 'ENV', defaultValue: 'prod', description: 'Environemnt')
     }
 
     environment {
@@ -26,5 +26,19 @@ pipeline {
                 sh """ terraform plan --var-file ${params.environment}.tfvars -out=file.txt """
             }
         }
+    
+        stage('Plan Approval') {
+            steps {
+                script {
+                    if (params.ENV == "prod") {
+                        input "Deploy to Production"
+                    } else {
+                        echo 'Dploy to Staging'
+                    }
+                }
+            }
+        }
+    
     }
 }
+
