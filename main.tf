@@ -333,17 +333,17 @@ data "azurerm_key_vault_secret" "secret" {
 
 
 
-output "virtual_network_id" {
-  value = data.azurerm_virtual_network.shaharbastion.id
-} 
+# output "virtual_network_id" {
+#   value = data.azurerm_virtual_network.shaharbastion.id
+# } 
 
-output "vnet_id" {
-  value = module.test.vnet_id
-}
+# output "vnet_id" {
+#   value = module.test.vnet_id
+# }
 
-output "netwrk_id" {
-  value = azurerm_network_interface.test[0].id
-}
+# output "netwrk_id" {
+#   value = azurerm_network_interface.test[0].id
+# }
 
 
 
